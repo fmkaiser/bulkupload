@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<info>
+    <id>bulkupload</id>
+    <name>Bulk Upload</name>
+    <description>Upload large files. Built on resumable.js and using ownCloud's existing WebDAV chunking API.</description>
+    <licence>AGPL</licence>
+    <author>Florian Kaiser</author>
+    <version>0.0.3</version>
+    <namespace>BulkUpload</namespace>
+    <category>other</category>
+    <dependencies>
+        <owncloud min-version="8.0" />
+    </dependencies>
+</info>
