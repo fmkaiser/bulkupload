@@ -18,7 +18,7 @@ use OCP\AppFramework\Controller;
 
 class PageController extends Controller {
 
-	public function __construct($AppName, IRequest $request, $UserId){
+	public function __construct($AppName, IRequest $request){
 		parent::__construct($AppName, $request);
 	}
 
@@ -32,7 +32,7 @@ class PageController extends Controller {
 			$status = \OC\Files\Filesystem::mkdir($savePath);
 		}
 
-		return new TemplateResponse('bulkupload', 'main', $params);  // templates/main.php
+		return new TemplateResponse('bulkupload', 'main');  // templates/main.php
 	}
 
 }
