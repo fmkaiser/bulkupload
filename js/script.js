@@ -102,7 +102,11 @@
         $("#progressbar-label").text(percent + " %");
       });
     r.on('fileError', function(file, message){
-	$("#progressbar-label").text("error"); 
+	if (r.errorCode == 507) {
+		$("#progressbar-label").text("error: insufficient storage");
+	} else {
+		$("#progressbar-label").text("error"); 
+	}
         console.error("Error uploading " + file.relativePath + ": " + message);
       });
 

@@ -777,7 +777,8 @@
             // HTTP 200 or 201 (created) perfect
             return('success');
           } else if($h.contains($.getOpt('permanentErrors'), $.xhr.status) || $.retries >= $.getOpt('maxChunkRetries')) {
-            // HTTP 415/500/501, permanent error
+            $.resumableObj.errorCode = $.xhr.status;
+      	    // HTTP 415/500/501, permanent error
             return('error');
           } else {
             // this should never happen, but we'll reset and queue a retry
