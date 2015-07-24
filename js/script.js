@@ -70,6 +70,11 @@
 
 	$(document).ready(function () {
 
+		if (!r.support) {
+			$("#droptarget").text("Your browser is not supported. Bulk upload works with recent versions of Mozilla Firefox and Google Chrome.");
+			return;
+		}
+
     r.assignBrowse(document.getElementById('browseButton'));
     r.assignDrop(document.getElementById('dropTarget'));
 
@@ -97,7 +102,7 @@
         $("#progressbar-label").text(percent + " %");
       });
     r.on('fileError', function(file, message){
-        $("#progressbar-label").text("error"); 
+	$("#progressbar-label").text("error"); 
         console.error("Error uploading " + file.relativePath + ": " + message);
       });
 
