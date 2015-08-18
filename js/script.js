@@ -68,12 +68,12 @@
 
 
 
-	$(document).ready(function () {
+  $(document).ready(function () {
 
-		if (!r.support) {
-			$("#droptarget").text("Your browser is not supported. Bulk upload works with recent versions of Mozilla Firefox and Google Chrome.");
-			return;
-		}
+    if (!r.support) {
+      $("#droptarget").text("Your browser is not supported. Bulk upload works with recent versions of Mozilla Firefox and Google Chrome.");
+      return;
+    }
 
     r.assignBrowse(document.getElementById('browseButton'));
     r.assignDrop(document.getElementById('dropTarget'));
@@ -104,7 +104,9 @@
     r.on('fileError', function(file, message){
 	if (r.errorCode == 507) {
 		$("#progressbar-label").text("error: insufficient storage");
-	} else {
+	} else if (r.errorCode == 415 && message.indexOf("Virus") != -1) {
+		$("#progressbar-label").text("error: virus detected");
+        } else {
 		$("#progressbar-label").text("error"); 
 	}
         console.error("Error uploading " + file.relativePath + ": " + message);
