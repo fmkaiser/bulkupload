@@ -1,2 +1,2 @@
-owncloud-bulkupload (0.0.1)
-* First release
+owncloud-bulkupload (0.0.4)
+* Working prototype. Limited error handling, no translations.
