@@ -103,15 +103,19 @@
       });
     r.on('fileError', function(file, message){
 	if (r.errorCode == 507) {
-		$("#progressbar-label").text("error: insufficient storage");
-	} else if (r.errorCode == 415 && message.indexOf("Virus") != -1) {
-		$("#progressbar-label").text("error: virus detected");
-        } else {
-		$("#progressbar-label").text("error"); 
-	}
-        console.error("Error uploading " + file.relativePath + ": " + message);
+          OC.dialogs.alert("Insufficient storage", "Error");
+          return;
+        }
+        try {
+          $xml = $($.parseXML(message));
+	  $msg = $xml.find("message").text();
+        } catch (err) {
+          /* cannot parse message from server, display generic error */
+          $msg = "An unknown error occured.";
+        }
+	OC.dialogs.alert($msg, "Error");
       });
 
-	});
+     });
 
 })(jQuery, OC);
