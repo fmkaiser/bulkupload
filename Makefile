@@ -1,7 +1,7 @@
 # Makefile for building the project
 
 app_name=bulkupload
-project_dir=$(CURDIR)/../$(app_name)
+project_dir=$(CURDIR)
 build_dir=$(CURDIR)/build/artifacts
 appstore_dir=$(build_dir)/appstore
 source_dir=$(build_dir)/source
