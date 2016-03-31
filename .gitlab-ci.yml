@@ -11,8 +11,9 @@ release-job:
     - make dist
   artifacts:
     name: "bulkupload_${CI_BUILD_REF_NAME}"
-    paths: 
-    - build/artifacts/source/bulkupload.tar.gz
-  #only: 
-  #  - tags
+    #paths: 
+    #- build/artifacts/source/bulkupload.tar.gz
+    untracked: true
+  only: 
+    - tags
   
