@@ -28,5 +28,5 @@ namespace OCA\BulkUpload\AppInfo;
 
 	// the title of your application. This will be used in the
 	// navigation or on the settings page of your app
-	'name' => \OC_L10N::get('bulkupload')->t('Bulk Upload')
+	'name' => \OCP\Util::getL10N('bulkupload')->t('Bulk Upload')
 ]);
