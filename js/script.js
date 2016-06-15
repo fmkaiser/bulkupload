@@ -54,8 +54,7 @@
 
     var headers = {
         "OC-Chunked": "1",
-        "Dummy": "0",
-        /* add second dummy element so that JavaScript doesn't complain */
+        "requesttoken": oc_requesttoken,
     }
 
     var r = new Resumable({
