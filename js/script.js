@@ -34,8 +34,9 @@
 
         var params = paramsToObject(params);
 
-        var base = "/remote.php/webdav/bulkupload/";
-        var url = base + params["resumableFilename"] + "-chunking-" + params["resumableIdentifier"] + "-" + params["resumableTotalChunks"] + "-" + (params["resumableChunkNumber"] - 1);
+        var base = "/remote.php/webdav";
+	var path = $("#bulkupload_path").val()
+        var url = base + path + params["resumableFilename"] + "-chunking-" + params["resumableIdentifier"] + "-" + params["resumableTotalChunks"] + "-" + (params["resumableChunkNumber"] - 1);
         return url;
     };
 
@@ -68,7 +69,9 @@
         withCredentials: true,
     });
 
-
+    var savePath = function(path) {
+	$("#bulkupload_path").val(path);
+    }
 
 
 
@@ -120,6 +123,16 @@
             }
             OC.dialogs.alert($msg, "Error");
         });
+
+	$('form.bulkupload button.choose').click(function (e) {
+                e.preventDefault();
+                OC.dialogs.filepicker(
+                    t('bulkupload', 'Choose folder'),
+                    savePath,
+                    false,
+                    'httpd/unix-directory'
+                );
+            });
 
     });
 

@@ -7,4 +7,10 @@
 	  <div id="progressbar" style="width: 100%;"></div>
 	  <div id="progressbar-label" style="width: 100%; text-align: center;"></div>
 	</div>
+
+	<form class="bulkupload">
+		Files will be saved in: 
+		<input class="url" type="text" readonly="readonly" id="bulkupload_path" value="/bulkupload/" />
+		<button class="choose" type="button"><?php p($l->t('Choose')); ?></button>
+	</form>
 </div>
