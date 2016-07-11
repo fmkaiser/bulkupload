@@ -9,7 +9,7 @@
     <namespace>BulkUpload</namespace>
     <category>other</category>
     <dependencies>
-        <owncloud min-version="8.0" max-version="9" />
+        <owncloud min-version="8.1" max-version="9" />
     </dependencies>
     <repository type="git">http://github.com/rzg-kaiser/bulkupload.git</repository>
     <bugs>https://github.com/rzg-kaiser/bulkupload/issues</bugs>

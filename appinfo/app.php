@@ -11,7 +11,8 @@
 
 namespace OCA\BulkUpload\AppInfo;
 
-\OCP\App::addNavigationEntry([
+//\OCP\App::addNavigationEntry([
+\OC::$server->getNavigationManager()->add([
 	// the string under which your app will be referenced in owncloud
 	'id' => 'bulkupload',
 
@@ -20,11 +21,11 @@ namespace OCA\BulkUpload\AppInfo;
 	'order' => 10,
 
 	// the route that will be shown on startup
-	'href' => \OCP\Util::linkToRoute('bulkupload.page.index'),
+	'href' => \OC::$server->getURLGenerator()->linkToRoute('bulkupload.page.index'),
 
 	// the icon that will be shown in the navigation
 	// this file needs to exist in img/
-	'icon' => \OCP\Util::imagePath('bulkupload', 'app.svg'),
+	'icon' => \OC::$server->getURLGenerator()->imagePath('bulkupload', 'app.svg'),
 
 	// the title of your application. This will be used in the
 	// navigation or on the settings page of your app
