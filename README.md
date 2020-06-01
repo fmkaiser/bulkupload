@@ -1,4 +1,10 @@
-# Bulk Upload
+# DEPRECATED
+
+Chunked upload via the web interface has since been implemented in ownCloud core.
+
+---
+
+## Summary
 [OwnCloud](https://owncloud.org) app allowing users to upload large files by transparently splitting them into small chunks. 
 Built using [resumable.js](https://github.com/23/resumable.js) and ownCloud's built-in WebDAV chunking API.
 Uses the HTML5 file upload API, which requires a somewhat recent browser such as Firefox 4+ and Chrome 11+.
